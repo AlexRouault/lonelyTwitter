@@ -1,3 +1,15 @@
+/*
+ * LonelyTwitterActivity
+ *
+ * Version 1.0
+ *
+ * Sept 28, 2017
+ *
+ * Copyright (c) My Copyright, CMPUT301, University of Alberta - All Rights
+ * Reserved. You may use, distribute, or modify this code under terms and
+ * conditions of the Code of Students Behavior at University of Alberta
+ */
+
 package ca.ualberta.cs.lonelytwitter;
 
 import java.io.BufferedReader;
@@ -26,6 +38,14 @@ import com.google.gson.reflect.TypeToken;
 
 import static android.R.attr.text;
 
+/**
+ * Represents the main display
+ *
+ * @author arouault
+ * @version 1.0
+ * @since 1.0
+ */
+
 public class LonelyTwitterActivity extends Activity {
 
 	private static final String FILENAME = "file.sav";
@@ -35,7 +55,10 @@ public class LonelyTwitterActivity extends Activity {
 	private ArrayList<Tweet> tweets = new ArrayList<Tweet>();
 	private ArrayAdapter<Tweet> adapter;
 	
-	/** Called when the activity is first created. */
+	/** Called when the activity is first created.
+	 *
+	 * @param savedInstanceState contains old data
+	 */
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -76,6 +99,10 @@ public class LonelyTwitterActivity extends Activity {
 
 	}
 
+	/**
+	 * Runs when app is launched
+	 */
+
 	@Override
 	protected void onStart() {
 		// TODO Auto-generated method stub
@@ -85,6 +112,10 @@ public class LonelyTwitterActivity extends Activity {
 				R.layout.list_item, tweets);
 		oldTweetsList.setAdapter(adapter);
 	}
+
+	/**
+	 * loads save data from Gson
+	 */
 
 	private void loadFromFile() {
 		try {
@@ -105,6 +136,10 @@ public class LonelyTwitterActivity extends Activity {
 			e.printStackTrace();
 		}
 	}
+
+	/**
+	 * Saves data with Gson
+	 */
 	
 	private void saveInFile() {
 		try {

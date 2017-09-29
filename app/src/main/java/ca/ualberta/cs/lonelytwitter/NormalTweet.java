@@ -1,5 +1,5 @@
 /*
- * ImportantTweet
+ * NormalTweet
  *
  * Version 1.0
  *
@@ -15,7 +15,7 @@ package ca.ualberta.cs.lonelytwitter;
 import java.util.Date;
 
 /**
- * Represents an Important Tweet
+ * Represents a NormalTweet
  *
  * @author arouault
  * @version 1.0
@@ -23,34 +23,36 @@ import java.util.Date;
  * @since 1.0
  */
 
-public class ImportantTweet extends Tweet {
+public class NormalTweet extends Tweet{
 
     /**
-     * Generates ImportantTweet
+     * Constructs NormalTweet
      * @param message message of tweet
      */
 
-    public ImportantTweet(String message){
+    public NormalTweet(String message) {
         super(message);
     }
 
     /**
-     * Generates ImportantTweet
-     * @param message Tweet message
-     * @param date Tweet date
+     * Constructs NormalTweet
+     * @param message
+     * @param date
      */
 
-    public ImportantTweet(String message, Date date) {
+    public NormalTweet(String message, Date date) {
         super(message, date);
     }
 
     /**
      *
-     * @return True. Tweet is important
+     * @return False. Tweet is unimportant
+     * @see ImportantTweet
+     * @see Tweet
      */
 
     @Override
-    public Boolean isImportant(){
-        return Boolean.TRUE;
+    public Boolean isImportant() {
+        return Boolean.FALSE;
     }
 }
